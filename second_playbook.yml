@@ -1,0 +1,14 @@
+---
+- name: my second ansible playbook variable test 
+  hosts: localhost
+  gather_facts: no
+
+  vars: 
+    var_1: awesome
+    var_2: ansible is
+    var_3: "{{ var_2 }} {{ var_1 }}"
+
+  tasks: 
+      - name: print variables in a sentence
+        debug: 
+          msg: "{{ var_3 }}"

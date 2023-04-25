@@ -1,0 +1,13 @@
+--- 
+- name: my first ansible playbook to show uptime of localhost
+  hosts: localhost
+
+  tasks: 
+  - name: get system uptime
+    command: 
+      cmd: uptime
+    register: system_uptime
+  
+  - name: debug system_uptime
+    debug: 
+      msg: "{{ system_uptime.stdout }}"
